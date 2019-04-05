@@ -1,3 +1,88 @@
+new Vue({
+        el:"#app",
+        data:{
+                state: true,
+                inputName:'',
+                names: [], 
+               
+
+²
+        },
+        methodes:{
+                addNameToList(){
+                      if (this.Validity(this.inputName)){
+                              this.names.push(this.inputName)
+                              this.inputName= ''
+                              this.ShowError=false
+                      }  else{
+                              this.ShowError= true
+                      }
+                },
+                Validity(value){
+                   if (this.inputName = ''){
+                           return true
+                   }else{
+                           return false
+                   }
+                }
+
+        }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Creer un nouvelle objet Vue ({
         // appeller l id #app,
@@ -12,12 +97,12 @@
         // },
         // Creer un objet methode{
                 // etape 1 :Creer une fonction addNameToList
-                    // * il y une condition if avec comme comparaison la valeur valider(la valeur entrer en input)
-                    // ______________la valeur enterer qu on ajoute a la liste
-                    // ______________la valeur input devient vide
-                    // ______________la valeur showError passe a false
-                    // * il y une condition else avec comme fin 
-                    // ______________la valeur showError qui  passe a false
+// * il y une condition if avec comme comparaison la valeur valider(la valeur entrer en input)
+// ______________la valeur enterer qu on ajoute a la liste
+// ______________la valeur input devient vide
+// ______________la valeur showError passe a false
+// * il y une condition else avec comme fin 
+// ______________la valeur showError qui  passe a false
 
 //----------------------------------------------------------------------------------------------------------------------------
                 // etape 3 : Creer une fonction RemoveName (avec comme argument l'index )

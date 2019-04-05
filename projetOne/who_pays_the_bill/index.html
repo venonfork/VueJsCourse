@@ -10,8 +10,24 @@
    <title>Who pays the bill</title>
 </head>
 <body>
-    <div id="app">
-      
+     <div id="name" class="container" v-if="state">
+         <h1>Titre</h1>
+         <div class="input_container">
+            <input type="text" v-model='inputName'>
+            <button @click="addNameToList">Ajouter</button>
+         </div>
+         <div class="error_label" v-if="showError">You must enter a name !!!</div>
+
+
+
+
+
+     </div>
+
+
+
+
+
     </div>
  </body>
  
@@ -26,7 +42,7 @@
      
             Etape 1:
 
-            Creer une div avec id et une class container,
+            Creer une div avec id names qui retourne un tableau et une class container,
             element vuejs qui represente une condition de state(true ou false)
             que tu rajoute dans les data du main state : True 
 
@@ -34,12 +50,12 @@
             Etape 2:
             Dans la div creer un titre H1
             creer dans la div class container une div input_container 
-            creer un input type text
-            creer un bouton ajouter
+            creer un input type text v -model inputName 
+            creer un bouton ajouter @click avec une fonctionaddNameToList
 
             Etape 3:
             creer une div avec comme class(error_label) 
-            elle doit etre une condition qui est false 
+            elle doit etre une condition showError qui est false 
             Entre les div nous avons le texte  "You must enter a name !!!"
 
             Etape 4:
