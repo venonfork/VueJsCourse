@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <!-- if else  -->
+            <div v-if="userAge > allowedAge">
+                    Yes
+            </div>
+            <div v-else-if="user == allowedAge">
+                    No
+            </div>
+            <div v-else="user < allowedAge">
+                <div>{{ajouter(this.allowedAge, this.userAge)}}</div>
+                    
+            </div>
+
+            <!-- Simple Condition  -->
+            <div v-show='!userAge !== 30/2'>ZERTY</div>
+
+
+            <!-- loop sur un array  -->
+            <div v-for='item in name'>{{item}}</div>
+            <hr>
+            <div v-for='(item, index) in name'>{{item}}: {{index}}</div>
+            <hr>
+            <div v-for='item in name'>{{name.item}}</div>
+            <hr>
+            <ul>
+                <li v-for='(item, index) in name'>{{item}}: {{index}}</li>
+            </ul>
+            <ul>
+                 <li v-for='(car, index) in cars'>{{car.color}}: {{index}}/{{car.model}}</li>
+            </ul>
+            <ul>
+                    <li v-for='(value, key, index) in user'>{{value}}: {{index}}/{{key}}</li>
+            </ul>
+
+    </div>
+
+</body>
+<script>
+
+    new Vue({
+        el:"#app",
+        data:{
+            user:{
+                name:"Francis",
+                lastname: 'Jones',
+                age:25
+            },
+            userAge:15,
+            allowedAge:18,
+            name: ['a', 'b', 'c', 'd'],
+            cars:[
+                {
+                    model:'mercedes',
+                    color: 'gris'
+                },
+                {
+                    model:'fiat',
+                    color: 'blue'
+                },
+                {
+                    model:'Peugeot',
+                    color: 'green'
+                }
+            
+            ]
+        },
+        methods:{
+          ajouter: (x,y)=>{
+              return `dans ${x - y} ans il pourra etre mature`
+          }
+        }
+    })
+
+</script>
+
+</html>

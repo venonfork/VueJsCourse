@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <!-- Afficher une image  -->
+      <img v-bind:src="src" v-bind:alt="alt">
+      <!-- facon plus courte de l'ecrire -->
+    <hr>
+      <!-- Link  -->
+      <a :href="link">Voila le liens google </a> 
+    <hr>
+    <!-- afficher un text  -->
+    <p v-text='texto'>Mais quoi tu rigole</p>
+    <!-- afficher une balise html  -->
+    <div v-html='Htmltext'>
+        
+    </div>
+    </div>
+
+</body>
+<script>
+
+    new Vue({
+        el:"#app",
+        data:{
+            src:'https://picsum.photos/200/300',
+            alt: 'pont',
+            link: 'https://www.google.fr',
+            texto: 'Voila ton texto::: Mdr Vilain!!!!! ',
+            Htmltext: '<strong>DAVIS Johns</strong>'
+        }
+        
+       
+       
+    })
+
+</script>
+
+</html>

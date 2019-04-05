@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='./js/vue.js'></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{ welcome() }}</p>
+        <p>Vrai ou Faux ?  {{istrue? 'Vrai': 'Faux'}}</p>  
+        <p>{{array[1]}}  </p> 
+        <p>{{object.sex}}</p>
+        <p>{{func()}}</p>
+    </div>
+</body>
+        <script>
+            
+            new Vue({
+                el:"#app",
+                data:{
+                     name: "harry", 
+                     istrue: true,
+                     array:['Jane', 'Marti'],
+                    object:{
+                        sex:'Femelle'
+                    },
+                    func : ()=>{
+                        return 'Message test VueJs '
+                    }
+                },
+                methods: {
+                    welcome(){
+                        return 'Hello gas by '+ this.name
+                    }
+                },
+            })
+    
+        </script>
+</html>

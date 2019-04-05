@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       <h1>{{ name }}</h1>
+       <h1 v-once>{{ name }}</h1>
+       {{ update(name) }}
+    </div>
+
+</body>
+<script>
+
+    new Vue({
+        el:"#app",
+        data:{
+            name:['Francis','r', 'v', 'y', 'c']
+        },
+        methods:{
+            update(name){
+                setTimeout(()=>{
+                    for(i = 1 ; i<4;i++){
+                        this.name[i] = name
+                        
+
+                    }
+                },2000)
+            }
+        }
+    })
+
+</script>
+
+</html>

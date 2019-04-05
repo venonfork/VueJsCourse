@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       <!-- <h1>{{ name }}</h1>  -->
+       <!-- <div v-on:click="changeName('francis', $event)"> -->
+         <!-- <div v-on:click.left="changeName('francis', $event)"> -->
+           Click me !!
+       <!-- </div> -->
+
+       <!-- <form v-on:submit.prevent="handleForm">
+           <input />
+           <button type="submit">submit</button>
+       </form>
+       <br> -->
+       <!-- <input type="text" v-on:keyup="showEvent"> -->
+       <!-- <input type="text" @:keyup="showEvent"> -->
+       <!-- afficher a un moment precis exemple lorsque l on tape g ou espace ou entrer -->
+       <input type="text" v-on:keyup.space.enter.g="showEvent">
+
+       
+
+
+    </div>
+
+</body>
+<script>
+
+    new Vue({
+        el:"#app",
+        data:{
+            name:'Francis',
+           
+            
+        },
+        methods:{
+            changeName(newName,event){
+                this.name= newName
+                console.log(event)
+            },
+            handleForm(){
+                console.log('submit form')
+            },
+            showEvent(event){
+                console.log(event.target.value)
+
+            }
+        }
+    })
+
+</script>
+</html>

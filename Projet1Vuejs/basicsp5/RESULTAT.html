@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <script src="js/vue.js"></script> -->
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       <!-- <h1>{{ name }}</h1>
+       <div v-on:dblclick="updateName">
+           Click me !!
+       </div> -->
+
+       <div class="box" v-on:mousemove="getCoord">
+            hover me
+       </div>
+       <p>x: {{ x }}</p>
+       <p>y: {{ y }}</p>
+
+    </div>
+
+</body>
+<script>
+
+    new Vue({
+        el:"#app",
+        data:{
+            name:'Francis',
+            x: 0,
+            y: 0,
+        },
+        methods:{
+            updateName(){
+                this.name = 'Steve';
+            },
+            getCoord(event){
+                this.x = event.clientX;
+                this.y = event.clientY;
+            }
+        }
+    })
+
+</script>
+
+<style>
+    .box {
+        background: red;
+        width: 200px;
+        height: 200px;
+    }
+</style>
+
+</html>
